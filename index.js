@@ -19,6 +19,6 @@ mongooose
   .catch((err) => console.log(err));
 
 app.use("/api", apiRoutes);
-app.listen(3000, () => {
+app.listen(process.env.PORT ||3000, () => {
   console.log("server is running on port 3000");
 });
