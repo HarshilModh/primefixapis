@@ -1,0 +1,626 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Primeflix",
+    "description": "Team Members:\nChintan Patel\nHarshil Modh\nRohit Gupta\n\nTeam Lead\nNisarg Shah\n\nDescription:\nWe had created a series of API's for CRUD operations for Users , Lists and Movies.\nIn Users there are 2 types of users\n1. Admin\n2. Normal Users\n\nAdmin: \nAdmin can login and can add, remove, update and delete Users and movies.\n\nUsers:\nOnly authenticated Users can login and can watch movies and web series uploaded by Admin.",
+    "contact": {}
+  },
+  "host": "primeflixapis.herokuapp.com",
+  "basePath": "/api",
+  "securityDefinitions": {},
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/register": {
+      "post": {
+        "summary": "Register",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Register",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RegisterRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "summary": "Login",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Login",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/LoginRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/getusers": {
+      "get": {
+        "summary": "Get all users",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Getallusers",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/getUser/61f4eda60dc289fce211a7a4": {
+      "get": {
+        "summary": "Get specefic users",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Getspeceficusers",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/updateUser/61f4eda60dc289fce211a7a4": {
+      "put": {
+        "summary": "Edit user",
+        "tags": [
+          "User"
+        ],
+        "operationId": "Edituser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/EdituserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/deleteUser/61f308752ad70a928e340e3a": {
+      "delete": {
+        "summary": "Delete User",
+        "tags": [
+          "User"
+        ],
+        "operationId": "DeleteUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/getLists": {
+      "get": {
+        "summary": "Get list",
+        "tags": [
+          "List"
+        ],
+        "operationId": "Getlist",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/addList": {
+      "post": {
+        "summary": "Add list",
+        "tags": [
+          "List"
+        ],
+        "operationId": "Addlist",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddlistRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/deleteList/61f4f71ac8e8e1f2e9785221": {
+      "delete": {
+        "summary": "Delete List",
+        "tags": [
+          "List"
+        ],
+        "operationId": "DeleteList",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/getMovies": {
+      "get": {
+        "summary": "Get all movies",
+        "tags": [
+          "Movie"
+        ],
+        "operationId": "Getallmovies",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/getMovie/61f3719689e1d304e4a4ad50": {
+      "get": {
+        "summary": "Get specefic movie",
+        "tags": [
+          "Movie"
+        ],
+        "operationId": "Getspeceficmovie",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/addMovie": {
+      "post": {
+        "summary": "Add Movie",
+        "tags": [
+          "Movie"
+        ],
+        "operationId": "AddMovie",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddMovieRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/updateMovie/61f3719689e1d304e4a4ad50": {
+      "put": {
+        "summary": "Update movie",
+        "tags": [
+          "Movie"
+        ],
+        "operationId": "Updatemovie",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/UpdatemovieRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/deleteMovie/61f3719689e1d304e4a4ad50": {
+      "delete": {
+        "summary": "Delete movie",
+        "tags": [
+          "Movie"
+        ],
+        "operationId": "Deletemovie",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/getRandom": {
+      "get": {
+        "summary": "Get random movie",
+        "tags": [
+          "Movie"
+        ],
+        "operationId": "Getrandommovie",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "RegisterRequest": {
+      "title": "RegisterRequest",
+      "example": {
+        "name": "demo34",
+        "email": "demo34@gmail.com",
+        "password": "12234"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "password"
+      ]
+    },
+    "LoginRequest": {
+      "title": "LoginRequest",
+      "example": {
+        "email": "demo44@gmail.com",
+        "password": "5634"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "EdituserRequest": {
+      "title": "EdituserRequest",
+      "example": {
+        "email": "demo44@gmail.com",
+        "password": "5634"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "AddlistRequest": {
+      "title": "AddlistRequest",
+      "example": {
+        "title": "Horrers",
+        "genre": "Horrers Movies",
+        "type": "Movies"
+      },
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "genre": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "genre",
+        "type"
+      ]
+    },
+    "AddMovieRequest": {
+      "title": "AddMovieRequest",
+      "example": {
+        "title": "Money Heist",
+        "genre": "Sci-fic"
+      },
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "genre": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "genre"
+      ]
+    },
+    "UpdatemovieRequest": {
+      "title": "UpdatemovieRequest",
+      "example": {
+        "title": "Interstaler",
+        "genre": "Thriller"
+      },
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "genre": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "genre"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "User"
+    },
+    {
+      "name": "List"
+    },
+    {
+      "name": "Movie"
+    }
+  ]
+}

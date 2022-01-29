@@ -4,6 +4,10 @@ const mongooose = require("mongoose");
 const apiRoutes = require("./api-routes");
 const cors = require("cors");
 const dotenv = require("dotenv");
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./Primeflix.postman_collection.json-Swagger20.json');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 dotenv.config();
 
 app.use(expreess.json());
