@@ -61,7 +61,7 @@ exports.login = function (req, res) {
             msg: "user found",
           });
         }
-      } else {
+      }  else {
         res.json({
           status: 401,
           data: err,

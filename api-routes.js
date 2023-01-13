@@ -4,7 +4,9 @@ const router = express.Router();
 const userController = require("./controller/userController");
 const movieController = require("./controller/movieController");
 const listController = require("./controller/listController");
-
+const songController = require("./controller/songController");
+const playlistController = require("./controller/playlistController");
+const StudentController = require("./controller/StudentController");
 const verify = require("./verifyToken");
 
 // users
@@ -45,5 +47,24 @@ router.route("/getLists").get(verify, listController.getLists);
 router.route("/addList").post(verify, listController.addList);
 // delete a lits
 router.route("/deleteList/:id").delete(verify, listController.deleteList);
+
+//Add Songs
+router.route("/addSong").post( songController.addSong);
+//get Songs
+router.route("/getSongs").get( songController.getSongs);
+//Add Playlist
+router.route("/addPlaylist").post(playlistController.addPlayList);
+//Add song to playlist
+router.route("/addSongToPlaylist/:id").post(playlistController.addSongToPlayList);
+//Remove song from playlist
+router.route("/removeSongFromPlaylist/:id").post(playlistController.removeSongFromPlayList);
+
+//Student
+
+//Add Student
+router.route("/addStudent").post(StudentController.addStudent);
+//Log in
+router.route("/loginStudent").post(StudentController.loginStudent);
+
 
 module.exports = router;
